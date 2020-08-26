@@ -288,7 +288,7 @@ public class MispTransClientController {
     	
     	String destinationDirectory = Config.getProperty("stixtransclient.destination.directory");
     	String mispUrl = Config.getProperty("stixtransclient.misp.url");
-    	String mispKey = EncryptionUtil.decrypt(Config.getProperty("stixtransclient.misp.key"));	
+    	String mispKey = EncryptionUtil.decrypt(Config.getProperty("stixtransclient.misp.key"), Config.getProperty("encKey"));	
 
 
     	

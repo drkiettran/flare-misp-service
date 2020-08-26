@@ -2,3 +2,477 @@
 # This insures the subdir is not empty, 
 # Will be contained within the Tarball, 
 # And created on the target environment when the tarball is unpacked.
+2020-08-26 14:57:18 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Starting MispTransClientControllerTests on kiet-VirtualBox with PID 77663 (started by student in /home/student/kiet/flare-misp-service/misp-trans-client-rest-service)
+2020-08-26 14:57:18 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - No active profile set, falling back to default profiles: default
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Completed initialization in 5 ms
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Started MispTransClientControllerTests in 1.362 seconds (JVM running for 1.934)
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener - Asked to Initialize Quartz Scheduler...
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler can be automatically started. Starting it now.
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-08-26 14:57:19 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler Started and Job 'initializeQuartzJob' successful.
+2020-08-26 14:57:19 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.JobRunShell - Job group1.initializeQuartzJob threw an unhandled Exception: 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 14:57:19 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.ErrorLogger - Job (group1.initializeQuartzJob threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 14:57:19 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 14:57:19 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 14:57:19 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 14:57:20 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 14:57:20 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 14:57:20 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 14:57:20 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 14:57:20 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 14:57:20 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 14:57:20 [Thread-3] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:11:39 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Starting MispTransClientControllerTests on kiet-VirtualBox with PID 78421 (started by student in /home/student/kiet/flare-misp-service/misp-trans-client-rest-service)
+2020-08-26 15:11:39 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - No active profile set, falling back to default profiles: default
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Completed initialization in 8 ms
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Started MispTransClientControllerTests in 1.46 seconds (JVM running for 2.03)
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener - Asked to Initialize Quartz Scheduler...
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler can be automatically started. Starting it now.
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-08-26 15:11:40 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler Started and Job 'initializeQuartzJob' successful.
+2020-08-26 15:11:40 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.JobRunShell - Job group1.initializeQuartzJob threw an unhandled Exception: 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 15:11:40 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.ErrorLogger - Job (group1.initializeQuartzJob threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:11:40 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:11:41 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:11:41 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:11:41 [Thread-3] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:16:03 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Starting MispTransClientControllerTests on kiet-VirtualBox with PID 78919 (started by student in /home/student/kiet/flare-misp-service/misp-trans-client-rest-service)
+2020-08-26 15:16:03 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - No active profile set, falling back to default profiles: default
+2020-08-26 15:16:03 [main] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.s.t.w.s.TestDispatcherServlet - Completed initialization in 6 ms
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientControllerTests - Started MispTransClientControllerTests in 1.341 seconds (JVM running for 1.914)
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener - Asked to Initialize Quartz Scheduler...
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler can be automatically started. Starting it now.
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-08-26 15:16:04 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler Started and Job 'initializeQuartzJob' successful.
+2020-08-26 15:16:04 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.JobRunShell - Job group1.initializeQuartzJob threw an unhandled Exception: 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 15:16:04 [DefaultQuartzScheduler_Worker-1] ERROR FlareMispService org.quartz.core.ErrorLogger - Job (group1.initializeQuartzJob threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception.
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8080/misptransclient": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:744)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:710)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:598)
+	at org.gd.ddcs.flare.misp.InitializeQuartzJob.execute(InitializeQuartzJob.java:44)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 common frames omitted
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at java.net.Socket.connect(Socket.java:556)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:735)
+	... 5 common frames omitted
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:16:04 [main] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:16:04 [main] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:16:04 [Thread-3] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:34:14 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.Application - Starting Application on kiet-VirtualBox with PID 80270 (/home/student/kiet/flare-misp-service/misp-trans-client-rest-service/target/classes started by student in /home/student/kiet/flare-misp-service/misp-trans-client-rest-service)
+2020-08-26 15:34:14 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.Application - No active profile set, falling back to default profiles: default
+2020-08-26 15:34:14 [main] INFO  FlareMispService o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-08-26 15:34:14 [main] INFO  FlareMispService o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-08-26 15:34:14 [main] INFO  FlareMispService o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-08-26 15:34:14 [main] INFO  FlareMispService o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-08-26 15:34:15 [main] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-26 15:34:15 [main] INFO  FlareMispService o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.Application - Started Application in 1.319 seconds (JVM running for 3.157)
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener - Asked to Initialize Quartz Scheduler...
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.simpl.SimpleThreadPool - Job execution threads will use class loader of thread: main
+2020-08-26 15:34:15 [main] INFO  FlareMispService o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.2.1 created.
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.2.1) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.2.1
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler can be automatically started. Starting it now.
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.quartz.core.QuartzScheduler - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2020-08-26 15:34:15 [main] INFO  FlareMispService org.gd.ddcs.flare.misp.QuartzStartup - ApplicationListener- Quartz Scheduler Started and Job 'initializeQuartzJob' successful.
+2020-08-26 15:34:15 [http-nio-8080-exec-1] INFO  FlareMispService o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-26 15:34:15 [http-nio-8080-exec-1] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:34:15 [http-nio-8080-exec-1] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:34:15 [http-nio-8080-exec-1] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:34:15 [http-nio-8080-exec-1] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:34:15 [http-nio-8080-exec-1] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:34:15 [http-nio-8080-exec-1] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:34:15 [http-nio-8080-exec-1] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:34:15 [http-nio-8080-exec-1] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:34:15 [DefaultQuartzScheduler_Worker-1] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Received OK status from http://localhost:8080/misptransclient?processType=stixToMisp
+2020-08-26 15:34:15 [DefaultQuartzScheduler_Worker-1] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Initialize quartz received response body: {"id":1,"status":"Failed","detailedStatus":"Error: Resource Check failed","processType":"","collection":"","beginTimestamp":null,"endTimeStamp":null}
+2020-08-26 15:39:15 [http-nio-8080-exec-3] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:39:15 [http-nio-8080-exec-3] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:39:15 [http-nio-8080-exec-3] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:39:15 [http-nio-8080-exec-3] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:39:15 [http-nio-8080-exec-3] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:39:15 [http-nio-8080-exec-3] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:39:15 [http-nio-8080-exec-3] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:39:15 [http-nio-8080-exec-3] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:39:15 [DefaultQuartzScheduler_Worker-2] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Received OK status from http://localhost:8080/misptransclient?processType=stixToMisp
+2020-08-26 15:39:15 [DefaultQuartzScheduler_Worker-2] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Initialize quartz received response body: {"id":2,"status":"Failed","detailedStatus":"Error: Resource Check failed","processType":"","collection":"","beginTimestamp":null,"endTimeStamp":null}
+2020-08-26 15:44:15 [http-nio-8080-exec-5] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Processing events...
+2020-08-26 15:44:15 [http-nio-8080-exec-5] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing FLARE/TAXII connection health check against url: https://FLAREgateway:8443
+2020-08-26 15:44:15 [http-nio-8080-exec-5] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for FLARE/TAXII with stixtransclient.poll.baseurl=https://FLAREgateway:8443 was unsuccessful due to: 
+java.net.UnknownHostException: FLAREgateway
+
+
+2020-08-26 15:44:15 [http-nio-8080-exec-5] ERROR FlareMispService o.g.d.f.m.MispTransClientController - TAXII health check failed.
+2020-08-26 15:44:15 [http-nio-8080-exec-5] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Performing Misp connection health check against url: https://MISP-Cloud
+2020-08-26 15:44:15 [http-nio-8080-exec-5] ERROR FlareMispService o.g.d.f.m.MispTransClientController - 
+
+ERROR: Health check connection test for Misp with stixtransclient.misp.url=https://MISP-Cloud was unsuccessful due to: 
+java.net.UnknownHostException: MISP-Cloud
+
+
+2020-08-26 15:44:15 [http-nio-8080-exec-5] ERROR FlareMispService o.g.d.f.m.MispTransClientController - Misp health check failed.
+2020-08-26 15:44:15 [http-nio-8080-exec-5] INFO  FlareMispService o.g.d.f.m.MispTransClientController - Status of Processing events: Failed
+2020-08-26 15:44:15 [DefaultQuartzScheduler_Worker-3] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Received OK status from http://localhost:8080/misptransclient?processType=stixToMisp
+2020-08-26 15:44:15 [DefaultQuartzScheduler_Worker-3] INFO  FlareMispService o.g.d.flare.misp.InitializeQuartzJob - Initialize quartz received response body: {"id":3,"status":"Failed","detailedStatus":"Error: Resource Check failed","processType":"","collection":"","beginTimestamp":null,"endTimeStamp":null}
+2020-08-26 15:47:23 [Thread-4] INFO  FlareMispService o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

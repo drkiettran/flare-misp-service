@@ -8,7 +8,10 @@ public class EncryptionTest {
 	@Test
 	public void test() {
 		String password = "password";
-		String encrypted = EncryptionUtil.encrypt(password);
-		assertEquals(password, EncryptionUtil.decrypt(encrypted));
+		String secret = "secret";
+
+		String encrypted = EncryptionUtil.encrypt(password, secret);
+		System.out.println("encrypted: " + encrypted);
+		assertEquals(password, EncryptionUtil.decrypt(encrypted, secret));
 	}
 }
